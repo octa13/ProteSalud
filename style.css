@@ -246,7 +246,7 @@ a{
 
 .productos__carrusel{
 
-    width:80%;
+    width:90%;
 
     overflow:hidden;
 
@@ -261,6 +261,8 @@ a{
     justify-content:center;
 
     gap:10px;
+
+    position:relative;
 
 }
 
@@ -333,9 +335,8 @@ h2:after{
     font-weight: bold;
     color: #3D3A2E;
 
-   
-
-    flex:0 0 calc(50% - 6px);
+    width:0;
+    flex:1;
 
 
 }
@@ -363,13 +364,10 @@ h2:after{
 
 .productos__slide{
 
-    min-width:100%;
-
+    flex:0 0 100%;
     display:flex;
-
     gap:12px;
 
-    justify-content:space-between;
 
 }
 
@@ -390,6 +388,21 @@ h2:after{
     cursor:pointer;
 
 }
+
+
+.productos__flecha--anterior{
+    position:absolute;
+    left:0;
+    z-index:10;
+}
+
+.productos__flecha--siguiente{
+    position:absolute;
+    right:0;
+    z-index:10;
+}
+
+
 
 .producto-card__icono{
 
