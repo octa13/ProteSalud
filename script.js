@@ -107,3 +107,53 @@ btnAnteriorProd.addEventListener("click", () => {
 
     actualizarCarruselProductos();
 });
+
+
+/*carrusel tactil*/
+let inicioX = 0;
+let finX = 0;
+
+const carrusel = document.querySelector(".productos__carrusel");
+
+carrusel.addEventListener("touchstart", (e) => {
+    inicioX = e.changedTouches[0].screenX;
+});
+
+carrusel.addEventListener("touchend", (e) => {
+
+    finX = e.changedTouches[0].screenX;
+
+    manejarSwipe();
+
+});
+
+
+function manejarSwipe(){
+
+    const diferencia = inicioX - finX;
+
+    if(diferencia > 50){
+
+        indiceProd++;
+
+        if(indiceProd >= slidesProd.length){
+            indiceProd = 0;
+        }
+
+        actualizarCarruselProductos();
+
+    }
+
+    if(diferencia < -50){
+
+        indiceProd--;
+
+        if(indiceProd < 0){
+            indiceProd = slidesProd.length - 1;
+        }
+
+        actualizarCarruselProductos();
+
+    }
+
+}
