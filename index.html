@@ -61,7 +61,17 @@
         <div class="hero__slides">
 
             <div class="hero__slide activo">
-                <img src="imagenes/hero1.png" alt="Imagen 1">
+
+                <picture>
+
+                    <source media="(min-width: 768px)"
+                    srcset="imagenes/hero-esc1.png">
+
+
+                    <img src="imagenes/hero1.png" alt="Imagen 1">
+
+                </picture>    
+
                 <div class="hero__contenido">
                 <a href="productos.html" class="hero__boton">
                 Ver más
@@ -70,7 +80,18 @@
             </div>
 
             <div class="hero__slide">
-                <img src="imagenes/hero2.png" alt="Imagen 2">
+
+                <picture>
+
+                    <source media="(min-width: 768px)"
+                    srcset="imagenes/hero-esc2.png">
+
+
+                    <img src="imagenes/hero2.png" alt="Imagen 1">
+
+                </picture>  
+
+              
                 <div class="hero__contenido">
                 <a href="productos.html" class="hero__boton">
                 Ver más
@@ -79,7 +100,15 @@
             </div>
 
             <div class="hero__slide">
-                <img src="imagenes/hero3.png" alt="Imagen 3">
+                <picture>
+
+                    <source media="(min-width: 768px)"
+                    srcset="imagenes/hero-esc3.png">
+
+
+                    <img src="imagenes/hero3.png" alt="Imagen 1">
+
+                </picture>  
                 <div class="hero__contenido">
                 <a href="productos.html" class="hero__boton">
                 Ver más
@@ -88,7 +117,15 @@
             </div>
 
             <div class="hero__slide">
-                <img src="imagenes/hero4.png" alt="Imagen 4">
+              <picture>
+
+                    <source media="(min-width: 768px)"
+                    srcset="imagenes/hero-esc4.png">
+
+
+                    <img src="imagenes/hero4.png" alt="Imagen 1">
+
+                </picture>  
                 <div class="hero__contenido">
                 <a href="productos.html" class="hero__boton">
                 Ver más
@@ -97,7 +134,15 @@
             </div>
 
             <div class="hero__slide">
-                <img src="imagenes/hero5.png" alt="Imagen 5">
+               <picture>
+
+                    <source media="(min-width: 768px)"
+                    srcset="imagenes/hero-esc5.png">
+
+
+                    <img src="imagenes/hero5.png" alt="Imagen 1">
+
+                </picture>  
                 <div class="hero__contenido">
                 <a href="productos.html" class="hero__boton">
                 Ver más
@@ -296,11 +341,11 @@
                 class="servicio__icono">
 
             <h3 class="servicio__titulo">
-                Asistencia <br> Especializada
+                Soporte técnico y <br>asesoramiento médico
             </h3>
 
             <p class="servicio__descripcion">
-                Soporte técnico y <br>asesoramiento médico
+               Asistencia Especializada <br> para el ámbito médico
             </p>
 
         </article>
@@ -318,12 +363,16 @@
 
     <div class="marcas__contenedor">
 
-        <h2>Somos <span>distribuidores autorizados</span></h2>
+    <h2>Somos <br>
+    <span>distribuidores</span> <br>
+    <span>autorizados</span></h2>
+
+    <div class="marcas__logo-wrapper">
 
         <img
             src="imagenes/bsc-logo-blue.svg"
             alt="Boston Scientific"
-            class="marcas__logo">
+            class="marcas__logo activo">
 
         <img
             src="imagenes/logo-azul.svg"
@@ -331,6 +380,8 @@
             class="marcas__logo">
 
     </div>
+
+</div>
 
 </section>
 

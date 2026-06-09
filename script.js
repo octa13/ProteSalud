@@ -8,6 +8,32 @@ menuBtn.addEventListener("click", () => {
 });
 
 
+
+/*ENCABEZADO*/
+
+const encabezado = document.querySelector(".encabezado");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 50){
+
+        encabezado.classList.add("scrolled");
+
+    }else{
+
+        encabezado.classList.remove("scrolled");
+
+    }
+
+});
+
+
+
+
+
+
+
+
 /* HERO */
 
 const slides = document.querySelectorAll(".hero__slide");
@@ -157,3 +183,57 @@ function manejarSwipe(){
     }
 
 }
+
+
+
+/*SERVICIOS*/
+
+const servicios = document.querySelectorAll(".servicio");
+
+const observadorServicios = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("visible");
+
+        }
+
+    });
+
+}, {
+
+    threshold:0.2
+
+});
+
+servicios.forEach(servicio => {
+
+    observadorServicios.observe(servicio);
+
+});
+
+
+
+/*MARCAS*/
+
+const logos = document.querySelectorAll(".marcas__logo");
+
+let logoActivo = 0;
+
+setInterval(() => {
+
+    logos[logoActivo].classList.remove("activo");
+
+    logoActivo++;
+
+    if(logoActivo >= logos.length){
+
+        logoActivo = 0;
+
+    }
+
+    logos[logoActivo].classList.add("activo");
+
+}, 2500);
