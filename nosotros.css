@@ -318,3 +318,305 @@
 .valores-corporativos .nosotros__icono{
     margin-top: 28px;
 }
+
+/* VERSION ESCRITORIO*/
+
+@media (min-width:768px){
+
+
+    /*NOSOTROS*/
+    
+.nosotros{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:30px 20px 60px;
+
+    display:grid;
+
+    grid-template-columns:1fr 500px;
+
+    grid-template-areas:
+        "encabezado imagen"
+        "contenido imagen";
+
+    column-gap:80px;
+
+    align-items:center;
+
+    text-align:left;
+
+}
+
+
+.nosotros__encabezado{
+
+    grid-area:encabezado;
+
+    justify-content:flex-start;
+
+    margin:0 0 25px 0;
+
+     max-width:520px;
+
+
+
+}
+
+
+.nosotros__icono{
+
+    width:28px;
+
+}
+
+
+
+.nosotros h1{
+
+    font-size:2rem;
+
+}
+
+
+.nosotros__contenido{
+
+    grid-area:contenido;
+
+    max-width:520px;
+
+    margin:0;
+
+}
+
+
+.nosotros__contenido p{
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+    margin-bottom:18px;
+
+}
+
+
+.nosotros__imagen{
+
+    grid-area:imagen;
+
+    width:100%;
+
+    max-width:500px;
+
+    height: 250px;
+
+    justify-self:end;
+
+    border-radius:8px;
+
+    object-fit:cover;
+
+}
+
+/*VALORES*/
+
+
+.valores{
+
+    flex-direction:row;
+
+    justify-content:center;
+
+    align-items:stretch;
+
+    gap:25px;
+
+    max-width:1230px;
+
+    margin:auto;
+
+}
+
+
+.valor-card{
+
+    width:auto;
+    padding:35px;
+    margin:0;
+
+}
+
+
+.valor-card:nth-child(1){
+
+    flex:1;
+
+}
+
+.valor-card:nth-child(2){
+
+    flex:1;
+
+}
+
+.valor-card:nth-child(3){
+
+    flex:1.6;
+
+}
+
+
+
+.valor-card__titulo img{
+
+    width:42px;
+    height:42px;
+
+}
+
+.valor-card h3{
+
+    font-size:1.5rem;
+
+}
+
+/*CORPORATIVOS*/
+
+.valores-corporativos{
+
+    padding:60px 40px 80px;
+
+}
+
+.valores-corporativos__lista{
+
+    display:grid;
+
+    grid-template-columns:repeat(3, 1fr);
+
+    gap:30px;
+
+    max-width:1200px;
+
+    margin:50px auto 0;
+
+    align-items:stretch;
+
+}
+
+.valor{
+
+    width:100%;
+
+    height:100%;
+
+    min-height:240px;
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+
+}
+
+.valor__titulo{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+}
+
+
+.valor__titulo img{
+
+    width:55px;
+
+    height:55px;
+
+}
+
+
+.valor__titulo h3{
+
+    font-size:1.3rem;
+
+    line-height:1.3;
+
+}
+
+
+.valor p{
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+    flex-grow:1;
+
+}
+
+
+
+.valor:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+
+.valor::before{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:0;
+
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #1FB76A,
+        #2E83C1
+    );
+
+    transition:.4s ease;
+
+}
+
+
+.valor:hover::before{
+
+    width:100%;
+
+}
+
+.NuestroCompromiso{
+    height: 400px;
+    padding-top: 50px;
+
+}
+
+}
+
+
+
+
+
+

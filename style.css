@@ -729,7 +729,7 @@ span{
 .barra-gradient{
     height: 40px;
     width: auto;
-    background:linear-gradient(90deg, #4580b9, #1fb76a);
+    background:linear-gradient(90deg, #1fb76a, #4580b9);
 }
 
 
