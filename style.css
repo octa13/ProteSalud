@@ -1010,6 +1010,7 @@ footer {
     .productos .subtitulo{
         margin-top: 10px;
         margin-bottom: 30px;
+        font-size: 18px;
     }
 
     .productos__slide{
@@ -1157,6 +1158,12 @@ footer {
         padding-top:55px;
         padding-bottom:80px;
 
+    }
+
+
+    .servicios .subtitulo{
+        font-size: 18px;
+        margin-top: 10px;
     }
 
     .servicios__lista{
