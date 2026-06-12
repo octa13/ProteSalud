@@ -27,9 +27,16 @@ window.addEventListener("scroll", () => {
 
 });
 
+/*SUB MENU*/
 
+const submenu = document.querySelector('.submenu');
+const botonSubmenu = document.querySelector('.submenu__boton');
 
+botonSubmenu.addEventListener('click', () => {
 
+    submenu.classList.toggle('activo');
+
+});
 
 
 
