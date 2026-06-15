@@ -9,6 +9,9 @@ menuBtn.addEventListener("click", () => {
 
 
 
+
+
+
 /*ENCABEZADO*/
 
 const encabezado = document.querySelector(".encabezado");
@@ -27,6 +30,13 @@ window.addEventListener("scroll", () => {
 
 });
 
+
+
+
+
+
+
+
 /*SUB MENU*/
 
 const submenu = document.querySelector('.submenu');
@@ -37,6 +47,9 @@ botonSubmenu.addEventListener('click', () => {
     submenu.classList.toggle('activo');
 
 });
+
+
+
 
 
 
@@ -108,6 +121,71 @@ indicadores.forEach((indicador, indice)=>{
 setInterval(siguienteSlide, 5000);
 
 
+
+
+
+
+
+
+/* HERO TÁCTIL */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+const carruselHero = document.querySelector(".hero__carrusel");
+
+carruselHero.addEventListener("touchstart", (e) => {
+
+    touchStartX = e.changedTouches[0].screenX;
+
+});
+
+carruselHero.addEventListener("touchend", (e) => {
+
+    touchEndX = e.changedTouches[0].screenX;
+
+    manejarSwipeHero();
+
+});
+
+function manejarSwipeHero(){
+
+    const distancia = touchEndX - touchStartX;
+
+    if(Math.abs(distancia) < 50){
+        return;
+    }
+
+    if(distancia < 0){
+
+        indiceActual++;
+
+        if(indiceActual >= slides.length){
+            indiceActual = 0;
+        }
+
+    }else{
+
+        indiceActual--;
+
+        if(indiceActual < 0){
+            indiceActual = slides.length - 1;
+        }
+
+    }
+
+    mostrarSlide(indiceActual);
+
+}
+
+
+
+
+
+
+
+
+
 /* PRODUCTOS CARRUSEL (CORREGIDO) */
 
 const trackProd = document.querySelector(".productos__track");
@@ -140,6 +218,13 @@ btnAnteriorProd.addEventListener("click", () => {
 
     actualizarCarruselProductos();
 });
+
+
+
+
+
+
+
 
 
 /*carrusel tactil*/
@@ -190,6 +275,12 @@ function manejarSwipe(){
     }
 
 }
+
+
+
+
+
+
 
 
 

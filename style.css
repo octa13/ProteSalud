@@ -193,7 +193,56 @@ a{
 
     text-transform:none;
 
+     display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
 }
+
+.submenu__icono{
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+
+.submenu__icono--verde{
+
+    background:#1FB76A;
+
+}
+
+.submenu__icono--azul{
+
+    background:#2E83C1;
+
+}
+
+.submenu__icono img{
+
+    width:16px;
+
+    height:16px;
+
+    object-fit:contain;
+
+}
+
+
 
 .submenu.activo .submenu__lista{
 
@@ -954,13 +1003,17 @@ footer {
 
 }
 
-
-/* ESCRITORIO*/
+/* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/ 
+/* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/ 
+/* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/ 
 
 @media (min-width:768px){
 
 
     /*MENU ENCABEZADO*/
+
+
+    /*SUBMENU*/
 
 
     .submenu{
@@ -991,11 +1044,66 @@ footer {
     .submenu__lista a{
 
       
-        padding:16px 20px;
+    padding:16px 20px;
 
     transition:.25s ease;
 
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
     }
+
+.submenu__icono{
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+
+
+.submenu__icono--verde{
+
+    background:#1FB76A;
+
+}
+
+.submenu__icono--azul{
+
+    background:#2E83C1;
+
+}
+
+
+
+.submenu__icono img{
+
+    width:16px;
+
+    height:16px;
+
+    object-fit:contain;
+
+}
+
+
+
+
+
 
 .submenu__lista a:hover{
 
@@ -1018,6 +1126,63 @@ footer {
 
 }
 
+.submenu__boton{
+
+    position:relative;
+
+    background:none;
+    border:none;
+
+    font-family:inherit;
+    font-size:.95rem;
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    color:#3D3A2E;
+
+    cursor:pointer;
+
+    padding:18px 24px;
+
+    transition:.3s ease;
+
+}
+
+.submenu__boton::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:22%;
+
+    bottom:15px;
+
+    width:0;
+
+    height:3px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        #1FB76A,
+        #2E83C1
+    );
+
+    transition:.3s ease;
+
+}
+
+.submenu__boton:hover::after{
+
+    width:55%;
+
+}
+
+
+/*MENU*/
 
     .encabezado{
         position:sticky;
@@ -1049,6 +1214,8 @@ footer {
     .encabezado__lista a{
         position:relative;
         transition:.3s ease;
+        padding-left: 8px;
+        padding-right: 8px;
     }
 
     .encabezado__lista > li > a::after{
@@ -1096,6 +1263,8 @@ footer {
         width: 240px;
         height: auto;
     }
+
+
 
 
 
