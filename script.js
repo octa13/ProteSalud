@@ -123,14 +123,12 @@ setInterval(siguienteSlide, 5000);
 
 
 
-
-
-
-
-/* HERO TÁCTIL */
+/* HERO TÁCTIL MEJORADO */
 
 let touchStartX = 0;
 let touchEndX = 0;
+
+let swipeBloqueado = false;
 
 const carruselHero = document.querySelector(".hero__carrusel");
 
@@ -150,11 +148,17 @@ carruselHero.addEventListener("touchend", (e) => {
 
 function manejarSwipeHero(){
 
-    const distancia = touchEndX - touchStartX;
-
-    if(Math.abs(distancia) < 50){
+    if(swipeBloqueado){
         return;
     }
+
+    const distancia = touchEndX - touchStartX;
+
+    if(Math.abs(distancia) < 120){
+        return;
+    }
+
+    swipeBloqueado = true;
 
     if(distancia < 0){
 
@@ -176,7 +180,17 @@ function manejarSwipeHero(){
 
     mostrarSlide(indiceActual);
 
+    setTimeout(() => {
+
+        swipeBloqueado = false;
+
+    }, 500);
+
 }
+
+
+
+
 
 
 
