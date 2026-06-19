@@ -59,8 +59,8 @@ botonSubmenu.addEventListener('click', () => {
 const slides = document.querySelectorAll(".hero__slide");
 const indicadores = document.querySelectorAll(".hero__indicador");
 
-/*const btnAnterior = document.querySelector(".hero__flecha--anterior");
-const btnSiguiente = document.querySelector(".hero__flecha--siguiente");*/
+const btnAnterior = document.querySelector(".hero__flecha--anterior");
+const btnSiguiente = document.querySelector(".hero__flecha--siguiente");
 
 let indiceActual = 0;
 
@@ -103,8 +103,8 @@ function anteriorSlide(){
 
 }
 
-/*btnSiguiente.addEventListener("click", siguienteSlide);
-btnAnterior.addEventListener("click", anteriorSlide);*/
+btnSiguiente.addEventListener("click", siguienteSlide);
+btnAnterior.addEventListener("click", anteriorSlide);
 
 indicadores.forEach((indicador, indice)=>{
 
@@ -349,3 +349,7 @@ setInterval(() => {
     logos[logoActivo].classList.add("activo");
 
 }, 2500);
+
+
+
+

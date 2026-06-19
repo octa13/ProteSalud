@@ -394,12 +394,18 @@ a{
 }
 
 
+.hero__flecha{
+    display:none;
+}
+
+
 /*PRODUCTOS*/
 
 
 .productos{
 
     position:relative;
+    height: auto;
 
 }
 
@@ -479,6 +485,14 @@ h2:after{
 }
 
 
+.salto1{
+    display: none;
+}
+
+.salto{
+    display: block;
+}
+
 .productos__track{
 
     display:flex;
@@ -488,7 +502,7 @@ h2:after{
 
 .producto-card{
 
-   
+    height:180px;
 
     padding:20px;
 
@@ -710,6 +724,14 @@ h2:after{
     display:none;
 }
 
+.saltar{
+display: block;
+}
+
+.saltar1{
+    display: none;
+}
+
 
 /*MARCAS*/
 
@@ -894,6 +916,7 @@ span{
 .novedad__imagen{
     width:95px;
     height:95px;
+    
 }
 
 .novedades h2{
@@ -1074,10 +1097,10 @@ footer {
     /*MENU ENCABEZADO*/
 
 
-    /*SUBMENU*/
+/*SUBMENU*/
 
 
-    .submenu{
+.submenu{
 
     position:relative;
 
@@ -1176,8 +1199,39 @@ footer {
 
 
 .submenu__lista li{
+    position:relative;
+    border-bottom:1px solid rgba(0,0,0,.06);
 
-     border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+
+.submenu__lista li::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-1px;
+
+    width:0;
+
+    height:2.5px;
+
+    background:linear-gradient(
+        90deg,
+        #1FB76A,
+        #2E83C1
+    );
+
+    transition:width .35s ease;
+
+}
+
+.submenu__lista li:hover::after{
+
+    width:100%;
 
 }
 
@@ -1357,9 +1411,80 @@ footer {
     }
 
 
+    .hero__flecha{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(1px);
+
+    color:#fff;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+    z-index:10;
+
+}
+
+.hero__flecha:hover{
+
+    background:rgba(255,255,255,.3);
+
+    transform:translateY(-50%) scale(1.08);
+
+}
+
+.hero__flecha--anterior{
+
+    left:25px;
+
+}
+
+.hero__flecha--siguiente{
+
+    right:25px;
+
+}
+
+
 /* PRODUCTOS */
 
 
+    .subtitulo1{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .salto{
+        display: none;
+    }
+
+    .salto1{
+        display: block;
+    }
 
     .productos .subtitulo{
         margin-top: 10px;
@@ -1487,7 +1612,7 @@ footer {
     .productos{
 
         max-width:1200px;
-        
+        height: auto;
         margin:auto;
 
     }
@@ -1529,6 +1654,8 @@ footer {
         align-items:flex-start;
 
         gap:80px;
+
+         margin-top:-30px;
 
     }
 
@@ -1577,17 +1704,45 @@ footer {
         display:inline;
     }
 
+    .saltar{
+        display: none;
+    }
+
+    .saltar1{
+        display: block;
+    }
+
 /*MARCAS*/
 
- .marcas__contenedor{
+ .marcas{
+
+    background:#fff;
+
+    min-height:250px;
 
     display:flex;
 
+    align-items:center;
+
     justify-content:center;
+
+}
+
+.marcas__contenedor{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+    display:flex;
+
+    justify-content:space-between;
 
     align-items:center;
 
-    gap:130px;
+    padding:0 50px;
 
 }
 
@@ -1595,11 +1750,13 @@ footer {
 
     font-size:38px;
 
-    max-width:350px;
-
     line-height:1;
 
-    margin-right: 150px;
+    margin:0;
+
+    text-align:left;
+
+    margin-bottom: 30px;
 
 }
 
@@ -1609,7 +1766,9 @@ footer {
 
     align-items:center;
 
-    gap:100px;
+    justify-content:center;
+
+    gap:50px;
 
     position:static;
 
@@ -1623,16 +1782,32 @@ footer {
 
     position:static;
 
-    width:180px;
-
-    height:auto;
-
     opacity:1 !important;
+
+    width:auto;
+
+    height:80px;
+
+    object-fit:contain;
+
+    transform:none;
 
     transition:none;
 
 }
-    
+ 
+
+.marcas__logo--boston{
+    height:90px;
+    width: 50%;
+}
+
+.marcas__logo--medtronic{
+    height:80px;
+    width: 30%;
+}
+
+
 
 /*NOVEDADES*/
     .novedades{
@@ -1795,7 +1970,7 @@ footer {
 
     .novedad__texto{
 
-        font-size:15px;
+        font-size:17px;
 
         line-height:1.5;
 
@@ -1809,9 +1984,13 @@ footer {
     }
 
 
+
+    /*FOOTER*/
+
     footer{
 
         padding:70px 100px 10px 100px;
+        height: 340px;
 
     }
 
@@ -1905,7 +2084,7 @@ footer {
 
     .footer-branch .address{
 
-        font-size:15px;
+        font-size:17px;
 
         line-height:1.7;
 
@@ -1913,7 +2092,7 @@ footer {
 
     .footer-branch .contact-info li{
 
-        font-size:15px;
+        font-size:17px;
 
         margin-bottom:10px;
 

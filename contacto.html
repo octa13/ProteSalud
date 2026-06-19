@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
+    <link rel="icon" type="image/png" href="imagenes/favicon.svg">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contacto.css">
 
@@ -41,7 +43,7 @@
 
     <ul class="submenu__lista">
 
-        <li>
+    <li>
     <a href="hemodinamia.html">
 
         <span class="submenu__icono submenu__icono--verde">
@@ -51,16 +53,16 @@
         Hemodinamia
 
     </a>
-</li>
+    </li>
 
 <li>
-    <a href="oncologia.html">
+    <a href="urologia.html">
 
         <span class="submenu__icono submenu__icono--azul">
-            <img src="imagenes/oncologia.png" alt="">
+            <img src="imagenes/urologia.png" alt="">
         </span>
-
-        Oncología
+        Urología
+        
 
     </a>
 </li>
@@ -78,25 +80,13 @@
 </li>
 
 <li>
-    <a href="urologia.html">
-
-        <span class="submenu__icono submenu__icono--azul">
-            <img src="imagenes/urologia.png" alt="">
-        </span>
-
-        Urología
-
-    </a>
-</li>
-
-<li>
     <a href="cirugia.html">
 
-        <span class="submenu__icono submenu__icono--verde">
-            <img src="imagenes/cirugia.png" alt="">
+        <span class="submenu__icono submenu__icono--azul">
+            <img src= "imagenes/cirugia.png" alt="">
         </span>
-
         Cirugía
+       
 
     </a>
 </li>
@@ -104,11 +94,23 @@
 <li>
     <a href="respiratorio.html">
 
+        <span class="submenu__icono submenu__icono--verde">
+            <img src= "imagenes/respiratorio.png" alt="">
+        </span>
+        Respiratorio
+        
+
+    </a>
+</li>
+
+<li>
+    <a href="oncologia.html">
+
         <span class="submenu__icono submenu__icono--azul">
-            <img src="imagenes/respiratorio.png" alt="">
+            <img src= "imagenes/oncologia.png" alt="">
         </span>
 
-        Respiratorio
+        Oncología
 
     </a>
 </li>
@@ -180,12 +182,12 @@
 
             <a href="tel:03854224405">
                 <img src="imagenes/llamar (1).png" alt="">
-             (0384) 0385-4254303
+              (0054) 0385 4254103 
             </a>
 
             <a href="tel:+5493855103331">
                 <img src="imagenes/llamada-de-telefono-inteligente.png" alt="">
-                +54 9 3855013333
+                +54 9 385310-1333  
             </a>
 
             <a href="mailto:info@protesalud.com.ar">
@@ -219,12 +221,12 @@
 
             <a href="tel:03854224405">
                 <img src="imagenes/llamar.png" alt="">
-           (0381) 0381-4254303
+           (0054) 0385 4254103 
             </a>
 
             <a href="tel:+5493855103331">
                 <img src="imagenes/llamada-de-telefono-inteligente (1).png" alt="">
-               +54 9 3855013333
+               +54 9 385310-1333  
             </a>
 
             <a href="mailto:info@protesalud.com.ar">
@@ -291,22 +293,32 @@
             Completa el formulario y responderemos tus consultas a la brevedad
         </p>
 
-        <form class="formulario">
+        <form class="formulario" action="https://formspree.io/f/xbdevqdb" method="post"  id="formulario-contacto">
 
             <input
                 type="text"
-                placeholder="Nombre y apellido">
+                placeholder="Nombre y apellido"
+                required
+                name="text">
 
             <input
                 type="email"
-                placeholder="Correo electrónico">
+                placeholder="Correo electrónico" 
+                required 
+                name="email">
 
             <input
                 type="tel"
-                placeholder="Teléfono">
+                placeholder="Teléfono"
+                required 
+                name="tel">
 
             <textarea
-                placeholder="Mensaje"></textarea>
+                placeholder="Mensaje" 
+                required
+                name="mensaje">
+                
+            </textarea >
 
             <button type="submit">
                 Enviar
@@ -339,8 +351,8 @@
       <h3>Oficina Sgo. del Estero</h3>
       <p class="address">Av. Independencia 252 | Piso 2 | Dpto. A<br>Santiago del Estero, Argentina<br>CP 4200</p>
       <ul class="contact-info">
-        <li>Tel: <a href="tel:03844254303">(0384) 0385-4254303</a></li>
-        <li>Cel: <a href="tel:+5493855013333">+54 9 3855013333</a></li>
+        <li>Tel: <a href="tel:03844254303">(0054) 0385-4254103</a></li>
+        <li>Cel: <a href="tel:+5493855013333">+54 9 385310-1333 </a></li>
         <li>Correo: <a href="mailto:info@protesalud.com.ar">info@protesalud.com.ar</a></li>
       </ul>
     </div>
@@ -350,8 +362,8 @@
       <h3>Sucursal Tucumán</h3>
       <p class="address">General Paz 576 PB<br>San Miguel de Tucumán, Argentina<br>CP 4000</p>
       <ul class="contact-info">
-        <li>Tel: <a href="tel:03814254303">(0381) 0381-4254303</a></li>
-        <li>Cel: <a href="tel:+5493855013333">+54 9 3855013333</a></li>
+        <li>Tel: <a href="tel:03814254303">(0054)  0385-4254103 </a></li>
+        <li>Cel: <a href="tel:+5493855013333"> +54 9 385310-1333 </a></li>
         <li>Correo: <a href="mailto:info@protesalud.com.ar">info@protesalud.com.ar</a></li>
       </ul>
     </div>
@@ -378,17 +390,22 @@
 <div class="derechos">
     Copyright © 2025 Prote+Salud <br>
     Todos los derechos reservados.
-</div>
+  </div>
 
 
 
-<script src="script.js"></script>
+
+
+
+
+
+    
 
 
 
 
 <a
-    href="https://wa.me/5493854123456?text=Hola,%20¿quieres%20realizar%20una%20consulta?"
+    href="https://wa.me/3853101333?text=Hola,%20¿quieres%20realizar%20una%20consulta?"
     class="whatsapp"
     target="_blank"
     rel="noopener noreferrer"
@@ -402,8 +419,25 @@
 
 
 
+<div id="mensaje-exito" class="mensaje-exito">
+
+    <div class="mensaje-exito__contenido">
+
+        <h3>¡Mensaje enviado!</h3>
+
+        <p>Nos pondremos en contacto contigo a la brevedad.</p>
+
+        <button id="cerrar-mensaje">
+            Aceptar
+        </button>
+
+    </div>
+
+</div>
 
 
+<script src="formulario.js"></script>
+<script src="script.js"></script>
 
 
 <body>
