@@ -399,14 +399,218 @@ a{
 }
 
 
+/* =========================
+   BARRA DE DATOS CELULARES
+   ========================= */
+
+.barra-gradient1{
+    width:100%;
+    padding:18px 8px;
+
+    background:linear-gradient(
+        100deg,
+        #2E83C1 0%,
+        #2498B6 42%,
+        #1FB76A 100%
+    );
+}
+
+.barra-gradient1__contenedor{
+    width:100%;
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:0;
+
+    text-align:center;
+}
+
+.barra-gradient1__dato{
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    min-width:0;
+    padding:0 5px;
+
+    color:#fff;
+}
+
+/* Oculta completamente Marcas internacionales en celular */
+.barra-gradient1 .barra-gradient1__dato--marcas{
+    display:none !important;
+}
+
+.barra-gradient1__numero{
+    display:block;
+
+    font-size:1.45rem;
+    line-height:1;
+
+    font-weight:800;
+    color:#fff;
+
+    text-shadow:0 2px 0 rgba(0,0,0,.12);
+}
+
+.barra-gradient1__dato p{
+    margin:5px 0 0;
+
+    font-size:.68rem;
+    line-height:1.12;
+
+    color:#fff;
+}
+
+/* Líneas solo después del dato 1 y 2 */
+.barra-gradient1__dato:nth-child(1)::after,
+.barra-gradient1__dato:nth-child(2)::after{
+    content:"";
+
+    position:absolute;
+    top:4px;
+    right:0;
+
+    width:1px;
+    height:calc(100% - 8px);
+
+    background:rgba(255,255,255,.35);
+}
+
+/* Evita líneas no deseadas */
+.barra-gradient1__dato:nth-child(3)::after,
+.barra-gradient1__dato--marcas::after{
+    display:none;
+}
+
 /*PRODUCTOS*/
 
 
 .productos{
 
-    position:relative;
-    height: auto;
+    width:100%;
+    height:auto;
+    min-height:0;
 
+    margin:0;
+    padding:30px 0 60px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 5% 75%,
+            rgba(31, 183, 106, .13),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 95% 18%,
+            rgba(46, 131, 193, .13),
+            transparent 34%
+        ),
+        #ededed;
+}
+
+.producto-card__nombre{
+    color: #3D3A2E;
+}
+
+
+/* El contenido queda por encima de los elementos decorativos */
+.productos h2,
+.productos .subtitulo1,
+.productos__contenedor{
+    position:relative;
+    z-index:1;
+}
+
+
+/* Órbitas más pequeñas para que no ocupen demasiado espacio */
+.productos__orbita{
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border:1px dashed;
+    border-radius:50%;
+
+    pointer-events:none;
+    z-index:0;
+}
+
+.productos__orbita--superior{
+    top:-120px;
+    right:-160px;
+
+    border-color:rgba(46, 131, 193, .28);
+
+    animation:orbitaProductos 16s linear infinite;
+}
+
+.productos__orbita--inferior{
+    bottom:-145px;
+    left:-170px;
+
+    border-color:rgba(31, 183, 106, .28);
+
+    animation:orbitaProductosInversa 18s linear infinite;
+}
+
+.productos__punto{
+    position:absolute;
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+}
+
+.productos__punto--azul{
+    top:28px;
+    left:60px;
+
+    background:#2E83C1;
+
+    box-shadow:
+        0 0 0 5px rgba(46, 131, 193, .12),
+        0 0 12px rgba(46, 131, 193, .55);
+
+    animation:puntoOrbitaAzul 8s ease-in-out infinite;
+}
+
+.productos__punto--verde{
+    top:70px;
+    right:38px;
+
+    background:#1FB76A;
+
+    box-shadow:
+        0 0 0 5px rgba(31, 183, 106, .12),
+        0 0 12px rgba(31, 183, 106, .55);
+
+    animation:puntoOrbitaVerde 9s ease-in-out infinite;
+}
+
+/* En celular no se usa la imagen de hover */
+.producto-card__fondo{
+    display:none;
+}
+
+/* El contenido debe permanecer siempre visible */
+.producto-card__icono,
+.producto-card__nombre,
+.producto-card .subtitulo{
+    position:relative;
+    z-index:1;
+
+    opacity:1;
+    transform:none;
 }
 
 .productos__carrusel{
@@ -624,11 +828,88 @@ h2:after{
 
 }
 
+/*fondo para productos*/
 
-/*SERVICIOS*/
+.productos__luz--azul{
+    width:260px;
+    height:260px;
+
+    top:-110px;
+    right:-125px;
+}
+
+.productos__luz--verde{
+    width:280px;
+    height:280px;
+
+    bottom:-150px;
+    left:-145px;
+}
+
+.productos__luz--central{
+    display:none;
+}
+
+/* Animaciones orbitas */
+@keyframes orbitaProductos{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes orbitaProductosInversa{
+    from{
+        transform:rotate(360deg);
+    }
+
+    to{
+        transform:rotate(0deg);
+    }
+}
+
+@keyframes puntoOrbitaAzul{
+    0%,
+    100%{
+        transform:translate(0, 0);
+        opacity:.45;
+    }
+
+    50%{
+        transform:translate(-55px, 45px);
+        opacity:1;
+    }
+}
+
+@keyframes puntoOrbitaVerde{
+    0%,
+    100%{
+        transform:translate(0, 0);
+        opacity:.45;
+    }
+
+    50%{
+        transform:translate(45px, -40px);
+        opacity:1;
+    }
+}
+
+/*orbita*/
+.productos__orbita--superior{
+    top:-150px; right:-250px;
+
+   
+}
+
+/*SERVICIOS*//*SERVICIOS*//*SERVICIOS*//*SERVICIOS*/
+
+
 .servicios{
-    background-color: #ededed;
-    margin-top: 50px;
+    background-color: white;
+    margin-top: 0px;
     padding-bottom: 50px;
     padding-top: 20px;
 }
@@ -640,13 +921,30 @@ h2:after{
 
     flex-direction:column;
 
-    gap:40px;
+    gap:18px;
 
 }
 
 .servicio{
+    position:relative;
+
+    width:calc(100% - 36px);
+    margin:0 auto;
+
+    padding:25px 18px;
 
     text-align:center;
+
+    border:1px solid rgba(46, 131, 193, .20);
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f2f8fc 100%
+    );
+
+    box-shadow:0 8px 20px rgba(28, 78, 112, .10);
 
     opacity:0;
 
@@ -655,8 +953,6 @@ h2:after{
     transition:
         opacity 2s ease,
         transform 2s ease;
-   
-
 }
 
 .servicio.visible{
@@ -732,13 +1028,21 @@ display: block;
     display: none;
 }
 
+/* En celular no mostramos los indicadores circulares */
+.servicios__paso{
+    display:none;
+}
+
+/*.servicios__paso span{
+    display: none;
+}*/
 
 /*MARCAS*/
 
 .marcas{
 
 
-    background:#fff;
+     background-color: #ededed;
 
     min-height:150px;
 
@@ -933,6 +1237,15 @@ span{
 }
 
 
+     /*BARRA GRADIENT HERO*/
+
+    .barra-gradient1{
+        height: 90px;
+        width: auto;
+        background:linear-gradient(90deg, #1fb76a, #4580b9);
+        
+    }
+
 
 
 /*FOOTER*/
@@ -1085,6 +1398,11 @@ footer {
 
     transform:scale(1.1);
 
+}
+
+
+.servicios__pasos{
+    display:none;
 }
 
 /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/  /* ESCRITORIO*/ 
@@ -1386,7 +1704,7 @@ footer {
 /* HERO */
 
     .hero{
-        margin-bottom:60px;
+       
     }
    
 
@@ -1468,95 +1786,252 @@ footer {
     right:25px;
 
 }
+  
+
+/*BARRA DE INFORMACION*/
+
+.barra-gradient1{
+    width:100%;
+    padding:30px 0;
+}
+
+.barra-gradient1__contenedor{
+    width:min(1100px, calc(100% - 60px));
+    /*margin:0 auto;*/
+    margin-left: 85px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+
+    gap:0;
+
+    text-align:center;
+}
+
+.barra-gradient1__numero{
+    font-size:2.8rem;
+}
+
+.barra-gradient1__dato p{
+    margin-top:7px;
+    font-size:1.05rem;
+}
+
+.barra-gradient1__dato--marcas strong{
+    font-size:1.15rem;
+    line-height:1.1;
+}
+
+
+.barra-gradient1__dato{
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+   
+
+}
+
+
+.barra-gradient1__dato:not(:last-child)::after{
+    content:"";
+
+    position:absolute;
+
+    top:10px;
+    right:0;
+
+    width:1px;
+    height:calc(100% - 20px);
+
+    background:rgba(255,255,255,.38);
+}
+
+.barra-gradient1__dato--marcas{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin-left: 50px;
+}
+
+/* No debe haber línea después del último bloque */
+.barra-gradient1__dato:last-child::after{
+    display:none;
+}
+
+.barra-gradient1__texto-marcas{
+    margin-top:10px;
+    font-size:.82rem;
+    line-height:1.25;
+}
+
+
 
 
 /* PRODUCTOS */
 
 
-    .subtitulo1{
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
+  /* Textos principales */
+.subtitulo1{
+    font-size:18px;
+    margin-bottom:20px;
+}
 
-    .salto{
-        display: none;
-    }
+.salto{
+    display:none;
+}
 
-    .salto1{
-        display: block;
-    }
+.salto1{
+    display:block;
+}
 
-    .productos .subtitulo{
-        margin-top: 10px;
-        margin-bottom: 30px;
-        font-size: 18px;
-    }
+.productos .subtitulo{
+    margin-top:10px;
+    margin-bottom:30px;
+    font-size:18px;
+}
 
-    .productos__slide{
-        min-width:auto;
-        display:contents;
-    }
+/* En escritorio se muestran las 6 cards */
+.productos__slide{
+    min-width:auto;
+    display:contents;
+}
 
-    .productos__flecha{
-        display:none;
-    }
+.productos__flecha{
+    display:none;
+}
 
+.productos__carrusel{
+    width:100%;
+    overflow:visible;
+}
 
-    .productos__carrusel{
+.productos__track{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:25px;
 
-        width:100%;
+    max-width:1100px;
+    margin:auto;
 
-        overflow:visible;
+    transform:none !important;
+}
 
-    }
+/* Fondo general de Productos */
+.productos{
+    width:100%;
+    max-width:none;
+    min-height:650px;
 
-    .productos__track{
+    margin:0;
+    padding:55px 30px 110px;
 
-        display:grid;
+    position:relative;
+    overflow:hidden;
 
-        grid-template-columns:repeat(3, 1fr);
+    background:
+        radial-gradient(
+            circle at 10% 70%,
+            rgba(31, 183, 106, .16),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 25%,
+            rgba(46, 131, 193, .16),
+            transparent 32%
+        ),
+        #ededed;
+}
 
-        gap:25px;
+/* Mantiene el contenido por encima de las órbitas */
+.productos h2,
+.productos .subtitulo1,
+.productos__contenedor{
+    position:relative;
+    z-index:1;
+}
 
-        transform:none !important;
+/* =========================
+   CARDS
+   ========================= */
 
-        max-width:1100px;
+.producto-card{
+    width:100%;
+    min-height:260px;
+    padding:30px;
 
-        margin:auto;
+    position:relative;
+    overflow:hidden;
 
-    }
+    font-size:1.4rem;
+    text-align:center;
 
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
 
-     .producto-card{
+/* Imagen de fondo */
+.producto-card__fondo{
+    display:block;
 
-        width:100%;
+    position:absolute;
+    inset:0;
 
-        min-height:260px;
+    width:100%;
+    height:100%;
 
-        padding:30px;
+    object-fit:cover;
 
-        font-size:1.4rem;
+    opacity:0;
+    transform:scale(1.08);
 
-        transition:.3s ease;
+    transition:
+        opacity .45s ease,
+        transform .7s ease;
 
-        position:relative;
+    z-index:1;
+}
 
-        overflow:hidden;
-
-    }
-
-    .producto-card::after{
-
+/* Capa oscura suave sobre la imagen */
+.producto-card::before{
     content:"";
 
     position:absolute;
+    inset:0;
 
+    background:rgba(0, 0, 0, .12);
+
+    opacity:0;
+
+    transition:opacity .45s ease;
+
+    z-index:2;
+}
+
+/* Contenido visible normalmente */
+.producto-card__icono,
+.producto-card__nombre,
+.producto-card .subtitulo{
+    position:relative;
+    z-index:3;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+}
+
+/* Línea inferior */
+.producto-card::after{
+    content:"";
+
+    position:absolute;
     left:0;
-
     bottom:0;
 
     width:0;
-
     height:5px;
 
     background:linear-gradient(
@@ -1565,57 +2040,292 @@ footer {
         #2E83C1
     );
 
-    transition:.4s ease;
+    transition:width .4s ease;
 
-    }
-
-    .producto-card:hover::after{
-
-    width:100%;
-
+    z-index:4;
 }
 
-    .producto-card:hover{
+/* Tamaño del icono */
+.producto-card__icono{
+    width:70px;
+    height:70px;
 
+    margin:0 auto 20px;
+}
+
+.producto-card__icono img{
+    width:40px;
+    height:40px;
+}
+
+/* =========================
+   HOVER
+   ========================= */
+
+.producto-card:hover{
     transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.16);
+}
 
+/* Aparece la imagen */
+.producto-card:hover .producto-card__fondo{
+    opacity:1;
+    transform:scale(1);
+}
+
+/* Se activa una sombra leve sobre la imagen */
+.producto-card:hover::before{
+    opacity:1;
+}
+
+/* Desaparecen icono, título y descripción */
+.producto-card:hover .producto-card__icono,
+.producto-card:hover .producto-card__nombre,
+.producto-card:hover .subtitulo{
+    opacity:0;
+    transform:translateY(15px);
+}
+
+/* Se anima la línea inferior */
+.producto-card:hover::after{
+    width:100%;
+}
+
+/* =========================
+   HOVER DE LAS CARDS
+   ========================= */
+
+.producto-card:hover{
+    transform:translateY(-8px);
     box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+/* Aparece la imagen */
+.producto-card:hover .producto-card__fondo{
+    opacity:1;
+    transform:scale(1);
+}
+
+/* Desaparecen icono y textos */
+.producto-card:hover .producto-card__icono,
+.producto-card:hover .producto-card__nombre,
+.producto-card:hover .subtitulo{
+    opacity:0;
+    transform:translateY(12px);
+}
+
+/* Aparece la línea inferior */
+.producto-card:hover::after{
+    width:100%;
+}
+
+/* =========================
+   LUCES DIFUSAS DE FONDO
+   ========================= */
+
+.productos__luces{
+    position:absolute;
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+    z-index:0;
+}
+
+.productos__luz{
+    position:absolute;
+
+    display:block;
+
+    border-radius:50%;
+
+    /* Menos desenfoque: la luz se nota, pero no queda tan saturada */
+    filter:blur(14px);
+
+    /* Vuelve a una intensidad más sutil */
+    opacity:.58;
+
+    pointer-events:none;
+}
+
+/* Luz azul superior derecha */
+.productos__luz--azul{
+    width:500px;
+    height:500px;
+
+    top:-170px;
+    right:-120px;
+
+    background:radial-gradient(
+        circle,
+        rgba(46, 131, 193, .38) 0%,
+        rgba(46, 131, 193, .20) 42%,
+        rgba(46, 131, 193, .06) 66%,
+        transparent 80%
+    );
+
+    /* Más rápida y con más recorrido */
+    animation:luzAzulProductos 5s ease-in-out infinite;
+}
+
+/* Luz verde inferior izquierda */
+.productos__luz--verde{
+    width:520px;
+    height:520px;
+
+    bottom:-240px;
+    left:-150px;
+
+    background:radial-gradient(
+        circle,
+        rgba(31, 183, 106, .36) 0%,
+        rgba(31, 183, 106, .18) 42%,
+        rgba(31, 183, 106, .05) 68%,
+        transparent 82%
+    );
+
+    /* Más rápida y con más recorrido */
+    animation:luzVerdeProductos 6s ease-in-out infinite;
+}
+
+/* Luz central detrás de las cards */
+.productos__luz--central{
+    width:360px;
+    height:360px;
+
+    top:45%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    background:radial-gradient(
+        circle,
+        rgba(46, 131, 193, .18) 0%,
+        rgba(31, 183, 106, .12) 44%,
+        transparent 76%
+    );
+
+    animation:luzCentralProductos 5s ease-in-out infinite;
+}
 
 
+
+/* Movimiento lento y sutil */
+@keyframes luzAzulProductos{
+    0%,
+    100%{
+        transform:translate(0, 0) scale(1);
+        opacity:.48;
     }
 
-
-    .producto-card__icono{
-
-        width:70px;
-        height:70px;
-        transition:.3s ease;
-
-
+    50%{
+        transform:translate(-85px, 70px) scale(1.16);
+        opacity:.75;
     }
-    
+}
 
-    .producto-card:hover .producto-card__icono{
-
-    transform:scale(1.15);
-
+@keyframes luzVerdeProductos{
+    0%,
+    100%{
+        transform:translate(0, 0) scale(1);
+        opacity:.45;
     }
 
+    50%{
+        transform:translate(95px, -75px) scale(1.18);
+        opacity:.72;
+    }
+}
 
-    .producto-card__icono img{
-
-        width:40px;
-        height:40px;
-
+@keyframes luzCentralProductos{
+    0%,
+    100%{
+        transform:translate(-50%, -50%) scale(.9);
+        opacity:.25;
     }
 
-    .productos{
-
-        max-width:1200px;
-        height: auto;
-        margin:auto;
-
+    50%{
+        transform:translate(-50%, -50%) scale(1.28);
+        opacity:.62;
     }
+}
+
+/* =========================
+   ÓRBITAS DECORATIVAS
+   ========================= */
+
+.productos__orbita{
+    position:absolute;
+
+    width:560px;
+    height:560px;
+
+    border:1px dashed;
+    border-radius:50%;
+
+    pointer-events:none;
+    z-index:0;
+}
+
+
+.productos__orbita--superior{
+    top:-150px;
+    right:-200px;
+
+    border-color:rgba(46, 131, 193, .32);
+
+    animation:orbitaProductos 12s linear infinite;
+}
+
+
+.productos__orbita--inferior{
+    bottom:-210px;
+    left:-130px;
+
+    border-color:rgba(31, 183, 106, .32);
+
+    animation:orbitaProductosInversa 14s linear infinite;
+}
+
+
+.productos__punto{
+    position:absolute;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+}
+
+
+.productos__punto--azul{
+    top:45px;
+    left:105px;
+
+    background:#2E83C1;
+
+    box-shadow:
+        0 0 0 7px rgba(46, 131, 193, .12),
+        0 0 18px rgba(46, 131, 193, .65);
+
+    animation:puntoOrbitaAzul 7s ease-in-out infinite;
+}
+
+
+.productos__punto--verde{
+    top:110px;
+    right:70px;
+
+    background:#1FB76A;
+
+    box-shadow:
+        0 0 0 7px rgba(31, 183, 106, .12),
+        0 0 18px rgba(31, 183, 106, .65);
+
+    animation:puntoOrbitaVerde 8s ease-in-out infinite;
+}
+
 
 
 /* TITULO Y SUBTITULO */
@@ -1636,6 +2346,8 @@ footer {
 
         padding-top:55px;
         padding-bottom:80px;
+        margin-top: 0;
+        background-color: white;
 
     }
 
@@ -1712,11 +2424,127 @@ footer {
         display: block;
     }
 
+
+
+/*Indicadores de servicios*/
+
+.servicios__lista{
+    position:relative;
+    overflow:visible;
+    
+}
+
+/* Cada article ocupa una columna y centra su contenido */
+.servicio{
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    max-width:300px;
+    flex:1;
+
+    transition:.3s ease;
+}
+
+/* Mantiene los tres círculos a la misma altura */
+.servicio__descripcion{
+    min-height:52px;
+}
+
+/* Círculo */
+.servicios__paso{
+    width:50px;
+    height:50px;
+
+    margin-top:32px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    font-size:1.1rem;
+    font-weight:700;
+
+    position:relative;
+    z-index:2;
+
+
+}
+
+.servicios__paso span{
+    display:block;
+    position:relative;
+    z-index:5;
+    color: inherit;
+}
+
+/* Colores */
+.servicios__paso--uno{
+    background: #2E83C1;
+}
+
+.servicios__paso--dos{
+    background: #2E83C1;
+}
+
+.servicios__paso--tres{
+     background: #2E83C1;
+}
+
+
+
+/* Línea hacia el próximo círculo */
+.servicio:not(:last-child) .servicios__paso::before{
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+    left:100%;
+
+    /*
+      80px es el gap entre servicios.
+      50px es el ancho del círculo.
+      La línea cubre el espacio entre ambos.
+    */
+    width:calc(100% + 330px);
+
+    height:4px;
+
+    transform:translateY(-50%);
+
+    border-radius:20px;
+
+    z-index:-1;
+
+    pointer-events:none;
+
+    margin-left: 20px;
+}
+
+/* Línea 01 → 02 */
+.servicio:nth-child(1) .servicios__paso::before{
+   background:linear-gradient(135deg,  #1FB76A, #2E83C1);
+}
+
+/* Línea 02 → 03 */
+.servicio:nth-child(2) .servicios__paso::before{
+   background:linear-gradient(135deg,  #1FB76A, #2E83C1);
+}
+
+
+
+
 /*MARCAS*/
 
  .marcas{
 
-    background:#fff;
+   background-color: #ededed;
 
     min-height:250px;
 
@@ -1794,6 +2622,10 @@ footer {
 
     transition:none;
 
+    
+
+
+
 }
  
 
@@ -1811,7 +2643,7 @@ footer {
 
 /*NOVEDADES*/
     .novedades{
-
+        
         padding:80px 100px;
 
     }
@@ -1985,6 +2817,18 @@ footer {
 
 
 
+     /*BARRA GRADIENT HERO*/
+
+    .barra-gradient1{
+        height: 150px;
+        width: auto;
+       background:linear-gradient(90deg, #1fb76a, #4580b9);
+       
+    }
+
+
+
+
     /*FOOTER*/
 
     footer{
@@ -2134,7 +2978,45 @@ footer {
 
 
 
+/* =====================================
+   RESETEO DE CARDS SOLO PARA ESCRITORIO
+   ===================================== */
 
+.servicio{
+    background:transparent;
+    border:none;
+    border-radius:0;
+    box-shadow:none;
+
+    padding:0;
+    min-height:0;
+    height:auto;
+
+    overflow:visible;
+}
+
+/* Evita que la card conserve efectos visuales de celular */
+.servicio::before,
+.servicio::after{
+    display:none;
+}
+
+/* Mantiene la animación de entrada, pero sin aspecto de card */
+.servicio.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+
+/* En escritorio el hover solo eleva suavemente el servicio */
+.servicio:hover{
+    transform:translateY(-8px);
+    box-shadow:none;
+}
+
+/* Los círculos vuelven a verse debajo de cada servicio */
+.servicios__paso{
+    display:flex;
+}
 
 }
 

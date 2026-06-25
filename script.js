@@ -351,5 +351,54 @@ setInterval(() => {
 }, 2500);
 
 
+/*barra gradient*/  
+const barraDatos = document.querySelector(".barra-gradient1");
+const numerosBarra = document.querySelectorAll(".barra-gradient1__numero");
 
+let contadorIniciado = false;
 
+function animarNumero(elemento) {
+    const destino = Number(elemento.dataset.numero);
+    const prefijo = elemento.dataset.prefijo || "";
+    const duracion = 1800;
+    const inicio = performance.now();
+
+    function actualizarNumero(tiempoActual) {
+        const progreso = Math.min((tiempoActual - inicio) / duracion, 1);
+
+        /* Hace que avance rápido al inicio y más suave al final */
+        const progresoSuave = 1 - Math.pow(1 - progreso, 3);
+
+        const valorActual = Math.floor(destino * progresoSuave);
+
+        elemento.textContent = prefijo + valorActual;
+
+        if (progreso < 1) {
+            requestAnimationFrame(actualizarNumero);
+        } else {
+            elemento.textContent = prefijo + destino;
+        }
+    }
+
+    requestAnimationFrame(actualizarNumero);
+}
+
+const observadorBarra = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+        if (entrada.isIntersecting && !contadorIniciado) {
+            contadorIniciado = true;
+
+            numerosBarra.forEach((numero) => {
+                animarNumero(numero);
+            });
+
+            observadorBarra.unobserve(barraDatos);
+        }
+    });
+}, {
+    threshold:0.45
+});
+
+if (barraDatos) {
+    observadorBarra.observe(barraDatos);
+}
