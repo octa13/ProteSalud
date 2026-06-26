@@ -260,7 +260,7 @@ a{
 
 
 
-/* HERO */
+/* HERO *//* HERO *//* HERO *//* HERO */
 
 .hero{
     width:100%;
@@ -323,6 +323,10 @@ a{
     left:20px;
 }
 
+
+.hero__texto{
+    display:none;
+}
 
 .hero__boton{
     display:inline-block;
@@ -1873,9 +1877,6 @@ footer {
 
 
 /* HERO *//* HERO *//* HERO *//* HERO */
-
-
-   
    
 
     .hero__slide{
@@ -1888,15 +1889,19 @@ footer {
     
 }
 
+    /* Botón debajo del texto */
     .hero__boton{
-        font-size:1rem;
-        padding:10px 40px;
-        margin-left: 40px;
-        margin-bottom: 45px;
-        border: 2px solid white;
-        border-radius: 18px;
+    margin:28px 0 0 0;
 
-    }
+    padding:10px 40px;
+
+    font-size:1rem;
+
+    border:2px solid #fff;
+    border-radius:18px;
+
+    color:#fff;
+}
 
 
     .hero__flecha{
@@ -3026,7 +3031,7 @@ footer {
     position:absolute;
 
     right:18px;
-    bottom:18px;
+    bottom:32px; /* antes: 18px */
 
     width:34px;
     height:34px;
@@ -3276,6 +3281,84 @@ footer {
 .servicios__paso{
     display:flex;
 }
+
+
+
+
+
+/* =====================================
+   TEXTO DEL HERO - SOLO ESCRITORIO
+   ===================================== */
+
+.hero__contenido{
+    position:absolute;
+
+    top:43%;
+    left:0;
+
+    transform:translateY(-50%);
+
+    width:50%;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+
+    padding-left:40px;
+
+    z-index:5;
+}
+
+/* Muestra el texto solo en escritorio */
+.hero__texto{
+    display:block;
+
+    color:#fff;
+
+    text-shadow:
+        0 3px 3px rgba(0, 0, 0, .35);
+}
+
+.hero__texto h1{
+    margin:0 0 8px;
+
+    font-size:4rem;
+    line-height:1;
+
+    font-weight:800;
+
+    letter-spacing:-2px;
+
+    color:#fff;
+}
+
+.hero__texto p{
+    margin:0;
+
+    font-size:1.65rem;
+    line-height:1.12;
+
+    font-weight:700;
+
+    color:#fff;
+}
+
+/* Botón debajo del texto */
+.hero__boton{
+    margin:28px 0 0 0;
+
+    padding:10px 40px;
+
+    font-size:1rem;
+
+    border:2px solid #fff;
+    border-radius:18px;
+
+    color:#fff;
+}
+
+
+
 
 }
 
