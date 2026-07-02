@@ -167,6 +167,13 @@ strong {
      margin-bottom:50px;
 }
 
+
+.marcas{
+    background-color: white;
+}
+
+
+
 /*VERSION ESCRTORIO*/
 
 @media (min-width:768px){
@@ -230,5 +237,11 @@ max-width: none;
 .categoria-producto{
     margin-top: 10px;
 }
+
+
+.marcas{
+    background-color: white;
+}
+
 
 }
