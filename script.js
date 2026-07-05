@@ -3,10 +3,23 @@
 const menuBtn = document.getElementById("encabezado__boton-menu");
 const nav = document.getElementById("encabezado__navegacion");
 
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click", (e) => {
+
+    e.stopPropagation();
+
     nav.classList.toggle("activo");
+
 });
 
+document.addEventListener("click", (e) => {
+
+    if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
+
+        nav.classList.remove("activo");
+
+    }
+
+});
 
 
 
@@ -39,12 +52,22 @@ window.addEventListener("scroll", () => {
 
 /*SUB MENU*/
 
-const submenu = document.querySelector('.submenu');
-const botonSubmenu = document.querySelector('.submenu__boton');
+const submenu = document.querySelector(".submenu");
+const botonSubmenu = document.querySelector(".submenu__boton");
 
-botonSubmenu.addEventListener('click', () => {
+botonSubmenu.addEventListener("click", (e) => {
 
-    submenu.classList.toggle('activo');
+    e.stopPropagation(); // evita que el clic llegue al documento
+
+    submenu.classList.toggle("activo");
+
+});
+
+document.addEventListener("click", (e) => {
+
+    if (!submenu.contains(e.target)) {
+        submenu.classList.remove("activo");
+    }
 
 });
 
@@ -402,3 +425,5 @@ const observadorBarra = new IntersectionObserver((entradas) => {
 if (barraDatos) {
     observadorBarra.observe(barraDatos);
 }
+
+

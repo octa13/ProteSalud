@@ -120,11 +120,13 @@ a{
 
 .encabezado__lista a{
 
-    display:block;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
     padding:18px 24px;
 
-    color:#3D3A2E;
+    color:#3D3A2E !important;
 
     font-size:.95rem;
 
@@ -134,35 +136,107 @@ a{
 
 }
 
+.menu__izquierda span{
+
+    color:#3D3A2E;
+
+}
+
+.menu__izquierda{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+}
+
+.menu__izquierda img{
+
+    width:20px;
+    height:20px;
+    object-fit:contain;
+
+}
+
+.menu__flecha{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.menu__flecha img{
+
+    width:18px;
+    height:18px;
+    opacity:.8;
+
+}
+
+
+/* Línea degradada en el lado izquierdo de cada opción */
+
+.encabezado__lista > li{
+    position: relative;
+}
+
+.encabezado__lista > li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    bottom: 1px;
+    width: 5px;
+    
+    background: linear-gradient(
+        180deg,
+        #1FB76A,
+        #2E83C1
+    );
+}
+
+
+
+
+
 /* SUBMENU */
 
 .submenu__boton{
 
-    width:100%;
+   width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
     background:none;
-
     border:none;
-
-    text-align:left;
 
     padding:18px 24px;
 
     color:#3D3A2E;
 
     font-size:.95rem;
-
     font-weight:700;
-
     text-transform:uppercase;
 
     font-family:inherit;
 
-    line-height:normal;
-
     cursor:pointer;
 
+}
 
+.submenu__boton .menu__izquierda{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.submenu__boton .menu__flecha{
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .submenu__lista{
@@ -181,6 +255,9 @@ a{
 
     padding: 0;
 
+    text-align:left;
+
+
 
 }
 
@@ -193,37 +270,37 @@ a{
 
 .submenu__lista a{
 
-    padding:14px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+
+    gap:12px;
+
+    padding:14px 24px;
 
     font-size:.9rem;
-
     font-weight:500;
 
     text-transform:none;
 
-     display:flex;
-
-    align-items:center;
-
-    gap:12px;
+    text-align:left;
 
 }
 
 .submenu__icono{
 
-    width:30px;
-
+     width:30px;
     height:30px;
 
     border-radius:50%;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
     flex-shrink:0;
+
+    margin-right:2px;
 
 }
 
@@ -258,6 +335,24 @@ a{
 
 }
 
+.submenu__lista li{
+    position: relative;
+}
+
+.submenu__lista li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    border-radius: 10px;
+    background: linear-gradient(
+        180deg,
+        #1FB76A,
+        #2E83C1
+    );
+}
 
 
 /* HERO *//* HERO *//* HERO *//* HERO */
@@ -1219,7 +1314,7 @@ span{
 
     min-height:200px;
 
-    border-radius:14px;
+    border-radius:10px;
 }
 
 /* Imagen ocupa toda la card */
@@ -1586,8 +1681,36 @@ footer {
 
 @media (min-width:768px){
 
+/*MENU ENCABEZADO*/
 
-    /*MENU ENCABEZADO*/
+/* Oculta los iconos del menú principal */
+.encabezado__lista > li > a .menu__izquierda img{
+    display:none;
+}
+
+/* Oculta la flecha del menú principal */
+.encabezado__lista > li > a .menu__flecha{
+    display:none;
+}
+
+/* Oculta el icono del botón Productos */
+.submenu__boton .menu__izquierda img{
+    display:none;
+}
+
+/* Oculta la flecha del botón Productos */
+.submenu__boton .menu__flecha{
+    display:none;
+}
+
+.encabezado__lista > li::before,
+.submenu__lista li::before{
+    display: none;
+}
+
+
+
+
 
 
 /*SUBMENU*/
@@ -1678,7 +1801,20 @@ footer {
 }
 
 
+.menu__izquierda{
 
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+}
+
+
+.menu__flecha{
+
+    display:none;
+
+}
 
 
 
@@ -1736,24 +1872,24 @@ footer {
 
 .submenu__boton{
 
-    position:relative;
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
     background:none;
     border:none;
 
-    font-family:inherit;
-    font-size:.95rem;
-    font-weight:700;
-
-    text-transform:uppercase;
+    padding:18px 24px;
 
     color:#3D3A2E;
 
+    font-size:.95rem;
+    font-weight:700;
+    text-transform:uppercase;
+
     cursor:pointer;
-
-    padding:18px 24px;
-
-    transition:.3s ease;
 
 }
 
@@ -2861,7 +2997,7 @@ footer {
 
     overflow:hidden;
 
-    border-radius:18px;
+    border-radius:12px;
 
     background:#123;
     box-shadow:0 12px 28px rgba(0,0,0,.12);
