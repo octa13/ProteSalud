@@ -102,6 +102,10 @@ a{
 
     box-shadow:0 4px 10px rgba(0,0,0,.08);
 
+    max-height:calc(100vh - 103px);
+
+    overflow-y:auto;
+
 }
 
 .encabezado__lista{
@@ -121,19 +125,15 @@ a{
 .encabezado__lista a{
 
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 
-    padding:18px 24px;
+    min-height:72px;
+    padding:0 24px;
 
-    color:#3D3A2E !important;
-
-    font-size:.95rem;
-
+    color:#3D3A2E;
     font-weight:700;
-
-    text-transform:uppercase;
-
+    text-transform: uppercase
 }
 
 .menu__izquierda span{
@@ -212,8 +212,10 @@ a{
 
     background:none;
     border:none;
+    margin: 0;
 
-    padding:18px 24px;
+    min-height:72px;
+    padding:0px 24px;
 
     color:#3D3A2E;
 
@@ -224,6 +226,12 @@ a{
     font-family:inherit;
 
     cursor:pointer;
+
+    box-sizing:border-box;
+    line-height:1;
+
+    appearance:none;
+    -webkit-appearance:none;
 
 }
 
@@ -331,7 +339,7 @@ a{
 
 .submenu.activo .submenu__lista{
 
-    max-height:400px;
+    max-height:700px;
 
 }
 
