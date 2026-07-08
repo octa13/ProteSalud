@@ -82,18 +82,8 @@ a{
 
 .encabezado__navegacion{
 
-    display:none;
-
-}
-
-.encabezado__navegacion.activo{
-
-    display:block;
-
     position:absolute;
-
     top:103px;
-
     left:0;
 
     width:100%;
@@ -103,10 +93,34 @@ a{
     box-shadow:0 4px 10px rgba(0,0,0,.08);
 
     max-height:calc(100vh - 103px);
-
     overflow-y:auto;
 
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(-18px);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        visibility .35s;
+
+    pointer-events:none;
+
 }
+
+.encabezado__navegacion.activo{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+    pointer-events:auto;
+
+}
+
 
 .encabezado__lista{
 
@@ -1144,6 +1158,131 @@ display: block;
     display: none;
 }*/
 
+
+
+/*PUBLICIDAD BANNER*/
+
+.hero-medico{
+    position: relative;
+
+    height:350px;
+
+    background-color:#e3eef6;
+    background-image:url(imagenes/pacel.png);
+    background-position:70%;
+    background-repeat:no-repeat;
+    background-size:cover;
+
+    overflow:hidden;
+}
+
+
+.hero-medico::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    background:linear-gradient(
+        90deg,
+        rgba(249,249,249,1) 0%,
+        rgba(249,249,249,.98) 30%,
+        rgba(249,249,249,.90) 50%,
+        rgba(249,249,249,.55) 65%,
+        rgba(249,249,249,0) 80%
+    );
+
+}
+
+.hero-medico__contenido,
+.hero-medico__texto{
+
+    position:relative;
+    z-index:2;
+
+}
+
+
+
+   
+.hero-medico__texto{
+    margin-left: 20px;
+  
+    width: 50%;
+    padding-top: 70px;
+
+   
+}
+
+
+.hero-medico-t{
+  
+    text-align: left;
+    font-size: 22px;
+  
+}
+
+.hero-medico-t::after{
+content: none;
+}
+
+.mn{
+ color:#3D3A2E;
+ font-weight: 800;
+}
+
+.mv{
+    color: #1fb76a;
+    font-weight: 800;
+}
+
+.ma{
+    color: #2E83C1;
+    font-weight: 800;
+}
+
+.medico-t{
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+.hero-medico__boton{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-top: 20px;
+
+    padding:8px 13px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        90deg,
+        #1FB76A,
+        #2E83C1
+    );
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+
 /*MARCAS*/
 
 .marcas{
@@ -1893,7 +2032,7 @@ footer {
 
     color:#3D3A2E;
 
-    font-size:.95rem;
+    font-size:17px;
     font-weight:700;
     text-transform:uppercase;
 
@@ -1968,6 +2107,8 @@ footer {
         transition:.3s ease;
         padding-left: 8px;
         padding-right: 8px;
+        font-weight: 700;
+        font-size: 17px;
     }
 
     .encabezado__lista > li > a::after{
@@ -2866,6 +3007,169 @@ footer {
 .servicio:nth-child(2) .servicios__paso::before{
    background:linear-gradient(135deg,  #1FB76A, #2E83C1);
 }
+
+
+
+
+/*PUBLICIDAD*/
+/*=========================================
+ HERO TECNOLOGÍA
+=========================================*/
+
+.hero-medico{
+
+    position:relative;
+
+    background-image: url(imagenes/pub.png);
+    
+
+    /*background-size:*/
+
+    background-position:center right;
+
+    background-repeat:no-repeat;
+
+    min-height:500px;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    
+
+}
+
+/* degradado blanco sobre la izquierda */
+
+.hero-medico::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        rgba(249,249,249,.98) 0%,
+        rgba(249,249,249,.94) 15%,
+        rgba(249,249,249,.78) 35%,
+        rgba(249,249,249,.15) 45%,
+        transparent 100%
+    );
+
+}
+
+.hero-medico__contenido{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+  
+
+    margin-left: 80px;
+
+}
+
+.hero-medico__texto{
+
+    max-width:600px;
+    padding-top: 0;
+
+}
+
+
+
+
+
+
+.hero-medico p{
+
+    font-size:1.35rem;
+
+    color:#555;
+
+    line-height:1.1;
+
+    max-width:520px;
+
+    margin-bottom:30px;
+    margin-top: 10px;
+
+}
+
+.hero-medico__boton{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:10px 15px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        90deg,
+        #1FB76A,
+        #2E83C1
+    );
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    transition:.35s;
+
+    margin-top: 0;
+
+}
+
+.hero-medico__boton:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+}
+
+.hero-medico-t{
+    text-align: left;
+    font-size: 40px;
+    background-color: transparent;
+   
+    
+}
+
+
+
+.hero-medico-t::after{
+content: none;
+}
+
+.mn{
+ color:#3D3A2E;
+ font-weight: 800;
+}
+
+.mv{
+    color: #1fb76a;
+    font-weight: 800;
+}
+
+.ma{
+    color: #2E83C1;
+    font-weight: 800;
+}
+
 
 
 
