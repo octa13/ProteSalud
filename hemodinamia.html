@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="hemodinamia.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
 
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Fuente montserrat-->
@@ -230,6 +232,7 @@
 
                 </div>
 
+                
             </div>
 
        </div> 
@@ -435,8 +438,28 @@
 
 <section class="productos" id="productos">
   
-        <h2>Productos</h2>
-        <p class="subtitulo1">
+ <div class="productos__orbita productos__orbita--superior" aria-hidden="true">
+        <span class="productos__punto productos__punto--azul"></span>
+    </div>
+
+    <div class="productos__orbita productos__orbita--inferior" aria-hidden="true">
+        <span class="productos__punto productos__punto--verde"></span>
+    </div>
+
+
+
+<div class="productos__luces" aria-hidden="true">
+    <span class="productos__luz productos__luz--azul"></span>
+    <span class="productos__luz productos__luz--verde"></span>
+    <span class="productos__luz productos__luz--central"></span>
+</div>
+
+
+
+
+
+        <h2 data-aos="fade-up">Productos</h2>
+        <p class="subtitulo1" data-aos="fade-up">
                 
                 En cada área comercializamos tecnología <br class="salto">avanzada <br class="salto1">de las marcas internacionales <br class="salto">mas reconocidas
 
@@ -454,63 +477,101 @@
        <div class="productos__track">
 
     <!-- Slide 1 -->
-    <div class="productos__slide">
+    <div class="productos__slide" data-aos="zoom-in" data-aos-duration="900">
 
-        <a href="hemodinamia.html" class="producto-card productocard--verde">
+        <a href="hemodinamia.html" class="producto-card productocard--verde" data-aos="zoom-in" data-aos-duration="900">
+
+            <img 
+            src="imagenes/fondHem.png" 
+            alt="fondoResp"
+            class="producto-card__fondo">
+
             <div class="producto-card__icono producto-card__icono--verde">
                 <img src="imagenes/corazon.png" alt="Hemodinamia">
             </div>
-            Hemodinamia
+            <span class="producto-card__nombre">Hemodinamia</span>
             <p class="subtitulo">Innovación en cardiología vascular</p>
         </a>
 
-        <a href="urologia.html" class="producto-card productocard--azul">
+        <a href="urologia.html" class="producto-card productocard--azul" data-aos="zoom-in" data-aos-duration="900">
+
+            <img 
+            src="imagenes/fondUri.png" 
+            alt="fondoResp"
+            class="producto-card__fondo">
+
             <div class="producto-card__icono producto-card__icono--azul">
                 <img src="imagenes/urologia.png" alt="Urología">
             </div>
-            Urología
+           <span class="producto-card__nombre"> Urología</span>
             <p class="subtitulo">Soluciones precisas para urología</p>
         </a>
 
     </div>
 
     <!-- Slide 2 -->
-    <div class="productos__slide">
+    <div class="productos__slide" data-aos="zoom-in" data-aos-duration="900">
 
-        <a href="endoscopia.html" class="producto-card productocard--verde">
+        <a href="endoscopia.html" class="producto-card productocard--verde" data-aos="zoom-in" data-aos-duration="900">
+
+            <img 
+            src="imagenes/fondEnd.png" 
+            alt="fondoResp"
+            class="producto-card__fondo">
+
+
             <div class="producto-card__icono producto-card__icono--verde">
                 <img src="imagenes/endoscopia.png" alt="Endoscopía">
             </div>
-            Endoscopía
+            <span class="producto-card__nombre"> Endoscopía</span>
             <p class="subtitulo">Tecnología avanzada para diagnóstico</p>
         </a>
 
-        <a href="cirugia.html" class="producto-card productocard--azul">
+        <a href="cirugia.html" class="producto-card productocard--azul" data-aos="zoom-in" data-aos-duration="900">
+
+            <img 
+            src="imagenes/fondCir.png" 
+            alt="fondoResp"
+            class="producto-card__fondo">
+
             <div class="producto-card__icono producto-card__icono--azul">
                 <img src="imagenes/cirugia.png" alt="Cirugía">
             </div>
-            Cirugía
+            <span class="producto-card__nombre">  Cirugía</span>
             <p class="subtitulo">Tecnología para cirugía avanzada</p>
         </a>
 
     </div>
 
     <!-- Slide 3 -->
-    <div class="productos__slide">
+    <div class="productos__slide" data-aos="zoom-in" data-aos-duration="900">
 
-        <a href="respiratorio.html" class="producto-card productocard--verde">
+        <a href="respiratorio.html" class="producto-card productocard--verde" data-aos="zoom-in" data-aos-duration="900">
+
+            <img 
+            src="imagenes/fondoResp.png" 
+            alt="fondoResp"
+            class="producto-card__fondo">
+
             <div class="producto-card__icono producto-card__icono--verde">
                 <img src="imagenes/respiratorio.png" alt="Respiratorio">
             </div>
-            Respiratorio
+            <span class="producto-card__nombre"> Respiratorio</span>
             <p class="subtitulo">Soporte y monitoreo respiratorio</p>
         </a>
 
-        <a href="oncologia.html" class="producto-card productocard--azul">
+        <a href="oncologia.html" class="producto-card productocard--azul" data-aos="zoom-in" data-aos-duration="900">
+
+            <img 
+            src="imagenes/fondOnc.png" 
+            alt="fondoResp"
+            class="producto-card__fondo">
+
+
             <div class="producto-card__icono producto-card__icono--azul">
                 <img src="imagenes/oncologia.png" alt="Oncología">
             </div>
-            Oncología
+           <span class="producto-card__nombre"> Oncología</span>
             <p class="subtitulo">Tecnología para terapias oncológicas</p>
         </a>
 
@@ -527,7 +588,6 @@
 </div>
 
 </section>
-
 
 <!-- MARCAS -->
 
@@ -645,6 +705,13 @@
 
 </a>
 
+
+  <!-- ANIMACIÓN AOS -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>    
+<script>
+  AOS.init();
+</script>
 
 </body>
 </html>

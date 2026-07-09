@@ -29,6 +29,8 @@
     text-shadow:
         0 4px 12px rgba(0,0,0,.45);
 
+        display: block; 
+
 }
 
 .hero-nosotros__texto h1{
