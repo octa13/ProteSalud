@@ -535,15 +535,77 @@
 }
 
 
+.hero-nosotros__texto{
+    display: none;
+}
 
 
-
-/*VERSION ESCRITORIO*/
-
-
+/*VERSION ESCRITORIO*//*VERSION ESCRITORIO*//*VERSION ESCRITORIO*//*VERSION ESCRITORIO*/
+/*VERSION ESCRITORIO*//*VERSION ESCRITORIO*//*VERSION ESCRITORIO*//*VERSION ESCRITORIO*/
+/*VERSION ESCRITORIO*//*VERSION ESCRITORIO*//*VERSION ESCRITORIO*//*VERSION ESCRITORIO*/
 
 
 @media (min-width:768px){ 
+
+
+/*TEXTO DE HERO*/
+
+.hero__slide{
+    position:relative;
+}
+
+.hero-nosotros__texto{
+
+    position:absolute;
+
+    left:3%;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#fff;
+
+    z-index:10;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,.45);
+
+     display: block;   
+
+}
+
+.hero-nosotros__texto h1{
+
+    margin:0 0 10px;
+
+    font-size:4rem;
+
+    font-weight:800;
+
+    line-height:1;
+
+    color:#fff;
+
+}
+
+.hero-nosotros__texto p{
+
+    margin:0;
+
+    font-size:1.5rem;
+
+    line-height:1.3;
+
+    font-weight:600;
+
+    color:#fff;
+
+}
+
+
+
+
+
 
 
 .contacto{
