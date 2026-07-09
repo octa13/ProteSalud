@@ -321,33 +321,7 @@ function manejarSwipe(){
 
 
 
-/*SERVICIOS*/
 
-const servicios = document.querySelectorAll(".servicio");
-
-const observadorServicios = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("visible");
-
-        }
-
-    });
-
-}, {
-
-    threshold:0.2
-
-});
-
-servicios.forEach(servicio => {
-
-    observadorServicios.observe(servicio);
-
-});
 
 
 

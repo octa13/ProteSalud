@@ -1067,40 +1067,11 @@ h2:after{
 
     box-shadow:0 8px 20px rgba(28, 78, 112, .10);
 
-    opacity:0;
-
-    transform:translateY(40px) scale(.90);
-
-    transition:
-        opacity 2s ease,
-        transform 2s ease;
+   
 }
 
-.servicio.visible{
 
-    opacity:1;
 
-    transform:translateY(0) scale(1);
-
-}
-
-.servicio:nth-child(1){
-
-    transition-delay:0s;
-
-}
-
-.servicio:nth-child(2){
-
-    transition-delay:.2s;
-
-}
-
-.servicio:nth-child(3){
-
-    transition-delay:.4s;
-
-}
 
 .servicio__icono{
 
@@ -1213,7 +1184,7 @@ display: block;
     margin-left: 20px;
   
     width: 50%;
-    padding-top: 70px;
+    padding-top: 50px;
 
    
 }
@@ -1347,6 +1318,8 @@ content: none;
 
     opacity:1;
 
+
+
 }
 
 .marcas__contenedor h2{
@@ -1368,6 +1341,27 @@ display: none;
 
 span{
     color: #2E83C1;
+}
+
+
+@keyframes palpitar {
+
+    0%{
+        transform:scale(1);
+    }
+
+    40%{
+        transform:scale(1.04);
+    }
+
+    60%{
+        transform:scale(1.01);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
 }
 
 
@@ -2048,7 +2042,7 @@ footer {
 
     left:22%;
 
-    bottom:15px;
+    bottom:23px;
 
     width:0;
 
@@ -2092,7 +2086,28 @@ footer {
     }
 
     .encabezado__navegacion{
-        display:block;
+         position:static;
+
+    display:block;
+
+    width:auto;
+
+    max-height:none;
+
+    overflow:visible;
+
+    background:transparent;
+
+    box-shadow:none;
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:none;
+
+    pointer-events:auto;
+
     }
 
     .encabezado__lista{
@@ -2119,7 +2134,7 @@ footer {
 
     left:22%;
 
-    bottom:15px;
+    bottom:23px;
 
     width:0;
 
@@ -3252,12 +3267,7 @@ content: none;
 
     object-fit:contain;
 
-    transform:none;
-
-    transition:none;
-
-    
-
+    animation:palpitar 2.8s ease-in-out infinite;
 
 
 }
