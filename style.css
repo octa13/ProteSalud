@@ -107,6 +107,8 @@ a{
 
     pointer-events:none;
 
+     z-index: 1000;
+
 }
 
 .encabezado__navegacion.activo{
@@ -142,7 +144,7 @@ a{
     align-items:center;
     justify-content:space-between;
 
-    min-height:72px;
+    min-height:50px;
     padding:0 24px;
 
     color:#3D3A2E;
@@ -228,7 +230,7 @@ a{
     border:none;
     margin: 0;
 
-    min-height:72px;
+    min-height:50px;
     padding:0px 24px;
 
     color:#3D3A2E;
@@ -375,6 +377,36 @@ a{
         #2E83C1
     );
 }
+
+
+
+/* =========================================
+   FONDO OSCURO AL ABRIR EL MENÚ
+   ========================================= */
+
+.encabezado::after {
+    content: "";
+    position: fixed;
+    top: 103px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 103px);
+    background: rgba(0, 0, 0, 0.20);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    z-index: 900;
+}
+
+/* Cuando el menú está abierto */
+.encabezado:has(.encabezado__navegacion.activo)::after {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
 
 
 /* HERO *//* HERO *//* HERO *//* HERO */
@@ -3814,7 +3846,6 @@ content: none;
 
     color:#fff;
 }
-
 
 
 

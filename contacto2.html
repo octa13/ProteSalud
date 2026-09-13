@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
     <link rel="icon" type="image/png" href="imagenes/favicon.svg">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="contacto.css">
+    <link rel="stylesheet" href="contacto2.css">
 
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -235,85 +236,407 @@
 
 <!--INFORMACIÓN DE CONTACTO -->
 
-<section class="contacto" >
+<section class="contacto">
 
-    <article class="sede sede--azul" data-aos="fade-up">
+    <!-- Fondo decorativo -->
+    <div class="contacto__decoracion contacto__decoracion--superior"></div>
 
-        <div class="sede__encabezado">
+    <div class="contenedor contacto__contenedor">
 
-            <img src="imagenes/ubicacion.png" alt="Ubicación">
 
-            <h2>Sede Santiago del Estero</h2>
+
+        <!-- =========================
+             TARJETA PRINCIPAL
+        ========================= -->
+
+        <div class="contacto__tarjeta" data-aos="fade-up">
+
+
+            <!-- COLUMNA INFORMACIÓN -->
+
+            <div class="contacto__informacion">
+
+
+                <!-- DIRECCIÓN -->
+
+                <div class="contacto__direccion">
+
+                    <div class="contacto__icono contacto__icono--azul">
+                        <img src="imagenes/ubicacion.png" alt="">
+                    </div>
+
+                    <div class="contacto__dato">
+
+                        <h2>Sede Santiago del Estero</h2>
+
+                        <p>
+                            Independencia 252 – Piso 2 – Dpto. A<br>
+                            Santiago del Estero, Argentina – CP 4200
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contacto__separador"></div>
+
+
+                <!-- TELÉFONO -->
+
+                <div class="contacto__fila">
+
+                    <div class="contacto__icono contacto__icono--azul">
+                        <img src="imagenes/llamar (1).png" alt="">
+                    </div>
+
+                    <div class="contacto__dato">
+
+                        <span>Teléfono</span>
+
+                        <a href="tel:+543854254103">
+                            (0054) 0385 4254103
+                        </a>
+
+                    </div>
+
+                    <a
+                        href="tel:+543854254103"
+                        class="contacto__accion"
+                        aria-label="Llamar por teléfono"
+                    >
+                        <img src="imagenes/fle.png" alt="">
+                    </a>
+
+                </div>
+
+
+                <!-- WHATSAPP -->
+
+                <div class="contacto__fila">
+
+                    <div class="contacto__icono contacto__icono--verde">
+                        <img src="imagenes/llamada-de-telefono-inteligente.png" alt="">
+                    </div>
+
+                    <div class="contacto__dato">
+
+                        <span>WhatsApp</span>
+
+                        <a
+                            href="https://wa.me/5438535101333"
+                            target="_blank"
+                        >
+                            +54 9 385310-1333
+                        </a>
+
+                    </div>
+
+                    <a
+                        href="https://wa.me/5438535101333"
+                        target="_blank"
+                        class="contacto__accion contacto__accion--verde"
+                        aria-label="Contactar por WhatsApp"
+                    >
+                        <img src="imagenes/fle.png" alt="">
+                    </a>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="contacto__fila">
+
+                    <div class="contacto__icono contacto__icono--azul">
+                        <img src="imagenes/correo.png" alt="">
+                    </div>
+
+                    <div class="contacto__dato">
+
+                        <span>Email</span>
+
+                        <a href="mailto:info@protesalud.com.ar">
+                            info@protesalud.com.ar
+                        </a>
+
+                    </div>
+
+                    <a
+                        href="mailto:info@protesalud.com.ar"
+                        class="contacto__accion"
+                        aria-label="Enviar email"
+                    >
+                        <img src="imagenes/fle.png" alt="">
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 MAPA
+            ========================= -->
+
+            <div class="contacto__mapa">
+
+                <div class="contacto__mapa-contenedor">
+
+                    <iframe
+                        src="https://www.google.com/maps?q=Independencia%20252,%20Santiago%20del%20Estero,%20Argentina&output=embed"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+
+                    <!-- BOTÓN CÓMO LLEGAR -->
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Independencia+252,+Santiago+del+Estero,+Argentina"
+                        target="_blank"
+                        class="contacto__como-llegar"
+                    >
+
+                        <span class="contacto__como-llegar-icono">
+                            <img src="imagenes/ubicacion.png" alt="">
+                        </span>
+
+                        <span>Cómo llegar</span>
+
+                        <strong>→</strong>
+
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <p class="sede__direccion">
-            <strong>Independencia 252 – Piso 2 – Dpto.A<br>
-            Santiago del Estero, Argentina – CP 4200</strong>
-        </p>
 
-        <div class="sede__datos">
 
-            <a href="tel:03854224405">
-                <img src="imagenes/llamar (1).png" alt="">
-              (0054) 0385 4254103 
-            </a>
 
-            <a href="tel:+5493855103331">
-                <img src="imagenes/llamada-de-telefono-inteligente.png" alt="">
-                +54 9 385310-1333  
-            </a>
+        <!-- =========================
+             TARJETA SECUNDARIA
+        ========================= -->
 
-            <a href="mailto:info@protesalud.com.ar">
-                <img src="imagenes/correo.png" alt="">
-                info@protesalud.com.ar
+        <div class="contacto__tarjeta" data-aos="fade-up">
+
+
+            <!-- COLUMNA INFORMACIÓN -->
+
+            <div class="contacto__informacion">
+
+
+                <!-- DIRECCIÓN -->
+
+                <div class="contacto__direccion">
+
+                    <div class="contacto__icono contacto__icono--azul">
+                        <img src="imagenes/ubicacion (1).png" alt="">
+                    </div>
+
+                    <div class="contacto__dato  decolorverde">
+
+                        <h2>Sucursal Tucumán</h2>
+
+                        <p>
+                            9 de Julio 82 | Piso 1 | Dpto. B<br>
+                            San Miguel de Tucumán, Argentina – CP 4000
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contacto__separador"></div>
+
+
+                <!-- TELÉFONO -->
+
+                <div class="contacto__fila">
+
+                    <div class="contacto__icono contacto__icono--verde">
+                        <img src="imagenes/llamar.png" alt="">
+                    </div>
+
+                    <div class="contacto__dato">
+
+                        <span>Teléfono</span>
+
+                        <a href="tel:+543854254103">
+                            (0054) 0385 4254103
+                        </a>
+
+                    </div>
+
+                    <a
+                        href="tel:+543854254103"
+                        class="contacto__accion"
+                        aria-label="Llamar por teléfono"
+                    >
+                        <img src="imagenes/fleve.png" alt="">
+                    </a>
+
+                </div>
+
+
+                <!-- WHATSAPP -->
+
+                <div class="contacto__fila">
+
+                    <div class="contacto__icono contacto__icono--verde">
+                        <img src="imagenes/llamada-de-telefono-inteligente (1).png" alt="">
+                    </div>
+
+                    <div class="contacto__dato">
+
+                        <span>WhatsApp</span>
+
+                        <a
+                            href="https://wa.me/5438535101333"
+                            target="_blank"
+                        >
+                            +54 9 385310-1333
+                        </a>
+
+                    </div>
+
+                    <a
+                        href="https://wa.me/5438535101333"
+                        target="_blank"
+                        class="contacto__accion contacto__accion--verde"
+                        aria-label="Contactar por WhatsApp"
+                    >
+                        <img src="imagenes/fleve.png" alt="">
+                    </a>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="contacto__fila">
+
+                    <div class="contacto__icono contacto__icono--azul">
+                        <img src="imagenes/correo (1).png" alt="">
+                    </div>
+
+                    <div class="contacto__dato">
+
+                        <span>Email</span>
+
+                        <a href="mailto:info@protesalud.com.ar">
+                            info@protesalud.com.ar
+                        </a>
+
+                    </div>
+
+                    <a
+                        href="mailto:info@protesalud.com.ar"
+                        class="contacto__accion"
+                        aria-label="Enviar email"
+                    >
+                        <img src="imagenes/fleve.png" alt="">
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 MAPA
+            ========================= -->
+
+            <div class="contacto__mapa">
+
+                <div class="contacto__mapa-contenedor">
+
+                    
+
+
+
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.2495092206645!2d-65.20750592621233!3d-26.832015276695344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c102fc2d449%3A0xb65764d8e8a5fc9b!2s9%20de%20Julio%2082%2C%20T4000%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e0!3m2!1ses!2sar!4v1789319730952!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+
+
+
+                    <!-- BOTÓN CÓMO LLEGAR -->
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Independencia+252,+Santiago+del+Estero,+Argentina"
+                        target="_blank"
+                        class="contacto__como-llegar"
+                    >
+
+                        <span class="contacto__como-llegar-icono">
+                            <img src="imagenes/ubicacion.png" alt="">
+                        </span>
+
+                        <span>Cómo llegar</span>
+
+                        <strong>→</strong>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <!-- =========================
+             BLOQUE ASESORAMIENTO
+        ========================= -->
+
+        <div class="contacto__asesoramiento">
+
+            <div class="contacto__asesoramiento-icono">
+
+                <img src="imagenes/soporte.png" alt="">
+
+            </div>
+
+
+            <div class="contacto__asesoramiento-separador"></div>
+
+
+            <div class="contacto__asesoramiento-texto">
+
+                <h2>¿Necesitás asesoramiento?</h2>
+
+                <p>
+                    Estamos para ayudarte a encontrar la solución adecuada.
+                </p>
+
+            </div>
+
+
+            <a  href="https://wa.me/5438535101333"
+                target="_blank" class="contacto__boton">
+
+                <span>Contactanos</span>
+
+                <strong>→</strong>
+
             </a>
 
         </div>
 
-        <iframe class="sede__mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3529.672973235043!2d-64.25992972616451!3d-27.78904897613585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943b5211b4a1a05d%3A0x8f22c3679e30d4e8!2sIndependencia%20252%2C%20G4200%20Santiago%20del%20Estero!5e0!3m2!1ses!2sar!4v1781187933604!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-    </article>
+    </div>
 
 
-    <article class="sede sede--verde" data-aos="fade-up">
-
-        <div class="sede__encabezado">
-
-            <img src="imagenes/ubicacion (1).png" alt="Ubicación">
-
-            <h2>Sucursal Tucumán</h2>
-
-        </div>
-
-        <p class="sede__direccion">
-           <strong> 9 de Julio 82 | Piso 1 | Dpto. B <br>
-            San Miguel de Tucumán, Argentina – CP 4000 </strong>
-        </p>
-
-        <div class="sede__datos">
-
-            <a href="tel:03854224405">
-                <img src="imagenes/llamar.png" alt="">
-           (0054) 0385 4254103 
-            </a>
-
-            <a href="tel:+5493855103331">
-                <img src="imagenes/llamada-de-telefono-inteligente (1).png" alt="">
-               +54 9 385310-1333  
-            </a>
-
-            <a href="mailto:info@protesalud.com.ar">
-                <img src="imagenes/correo (1).png" alt="">
-                info@protesalud.com.ar
-            </a>
-
-        </div>
-
-        <iframe class="sede__mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.1108530282763!2d-65.20970432621202!3d-26.836426276692738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0sede__mape8d3f160f%3A0xaf25f4de8ee29e12!2sGral.%20Jos%C3%A9%20Mar%C3%ADa%20Paz%20576%2C%20T4000%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e0!3m2!1ses!2sar!4v1781188125311!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-
-    </article>
+    
 
 
 </section>
