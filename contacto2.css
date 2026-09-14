@@ -464,6 +464,12 @@
     }
 
 
+
+    .contacto__asesoramiento-texto h2::after{
+        display: none;
+    }
+
+
     .contacto__asesoramiento-texto p {
         margin: 0;
 

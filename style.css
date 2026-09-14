@@ -2064,6 +2064,7 @@ footer {
 
     cursor:pointer;
 
+    position:relative;
 }
 
 .submenu__boton::after{
@@ -2074,7 +2075,7 @@ footer {
 
     left:22%;
 
-    bottom:23px;
+    bottom:10px;
 
     width:0;
 
@@ -2166,7 +2167,7 @@ footer {
 
     left:22%;
 
-    bottom:23px;
+    bottom:10px;
 
     width:0;
 
